@@ -29598,6 +29598,8 @@ tc_gen_reloc (asection *section, fixS *fixp)
 	  case BFD_RELOC_ARM_THUMB_SHIFT:  type = "THUMB_SHIFT";  break;
 	  case BFD_RELOC_ARM_THUMB_IMM:	   type = "THUMB_IMM";	  break;
 	  case BFD_RELOC_ARM_THUMB_OFFSET: type = "THUMB_OFFSET"; break;
+	  case BFD_RELOC_ARM_THUMB_MOVW:   type = "THUMB_MOV";    break;
+	  case BFD_RELOC_ARM_THUMB_MOVT:   type = "THUMB_MOV";    break;
 	  default:			   type = _("<unknown>"); break;
 	  }
 	as_bad_where (fixp->fx_file, fixp->fx_line,
@@ -29750,7 +29752,9 @@ arm_force_relocation (struct fix * fixp)
       || fixp->fx_r_type == BFD_RELOC_ARM_T32_OFFSET_IMM
       || fixp->fx_r_type == BFD_RELOC_ARM_T32_ADD_PC12
       || fixp->fx_r_type == BFD_RELOC_ARM_T32_CP_OFF_IMM
-      || fixp->fx_r_type == BFD_RELOC_ARM_T32_CP_OFF_IMM_S2)
+      || fixp->fx_r_type == BFD_RELOC_ARM_T32_CP_OFF_IMM_S2
+      || fixp->fx_r_type == BFD_RELOC_ARM_THUMB_MOVW
+      || fixp->fx_r_type == BFD_RELOC_ARM_THUMB_MOVT)
     return 0;
 
   /* Always leave these relocations for the linker.  */
