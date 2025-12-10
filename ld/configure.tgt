@@ -184,7 +184,7 @@ arm-wince-pe | arm-*-wince | arm*-*-mingw32ce*)
 			targ_emul=arm_wince_pe
 			targ_extra_ofiles="deffilep.o pe-dll.o"
 			;;
-arm-*-pe)		targ_emul=armpe
+arm*-*-pe | arm*-*-mingw32*)		targ_emul=armpe
 			targ_extra_ofiles="deffilep.o pe-dll.o"
 			;;
 arm*b-*-freebsd*)	targ_emul=armelfb_fbsd
