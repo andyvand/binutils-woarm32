@@ -248,6 +248,12 @@ case "${targ}" in
     targ_selvecs="aarch64_elf64_be_vec aarch64_elf32_le_vec aarch64_elf32_be_vec arm_elf32_le_vec arm_elf32_be_vec aarch64_pei_le_vec aarch64_pe_le_vec"
     want64=true
     ;;
+  arm*-*-pe* | arm*-*-mingw* | arm**-cygwin*)
+    targ_defvec=arm_pe_le_vec
+    targ_selvecs="arm_pe_le_vec arm_pei_le_vec arm_pe_be_vec arm_pei_be_vec arm_elf32_le_vec arm_elf32_be_vec pdb_vec"
+    want64=false
+    targ_underscore=no
+    ;;
   aarch64-*-pe* | aarch64-*-mingw* | aarch64-*-cygwin*)
     targ_defvec=aarch64_pe_le_vec
     targ_selvecs="aarch64_pe_le_vec aarch64_pei_le_vec aarch64_pe_big_vec aarch64_elf64_le_vec aarch64_elf64_be_vec aarch64_elf32_le_vec aarch64_elf32_be_vec arm_elf32_le_vec arm_elf32_be_vec pdb_vec"

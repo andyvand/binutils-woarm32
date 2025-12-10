@@ -429,6 +429,8 @@ static int verbose;
 static FILE *output_def;
 static FILE *base_file;
 
+#define DLLTOOL_DEFAULT_ARM 1
+
 #ifdef DLLTOOL_DEFAULT_ARM
 static const char *mname = "arm";
 #endif
@@ -437,10 +439,10 @@ static const char *mname = "arm";
 static const char *mname = "arm-wince";
 #endif
 
-#ifdef DLLTOOL_DEFAULT_AARCH64
+/*#ifdef DLLTOOL_DEFAULT_AARCH64*/
 /* arm64 rather than aarch64 to match llvm-dlltool */
-static const char *mname = "arm64";
-#endif
+/*static const char *mname = "arm64";
+#endif*/
 
 #ifdef DLLTOOL_DEFAULT_I386
 static const char *mname = "i386";
